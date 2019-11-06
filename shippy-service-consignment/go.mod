@@ -1,4 +1,4 @@
-module github.com/linty5240/consignment/shippy-service-consignment
+module github.com/lty5240/consignment/shippy-service-consignment
 
 go 1.12
 

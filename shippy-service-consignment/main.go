@@ -3,7 +3,7 @@
  * @Github: https://github.com/lty5240
  * @Date: 2019-11-06 16:03:30
  * @LastEditor: Linty
- * @LastEditTime: 2019-11-06 16:56:23
+ * @LastEditTime: 2019-11-06 17:06:08
  * @Description: -
  */
 // shippy-service-consignment/main.go
@@ -16,7 +16,7 @@ import (
 	"sync"
 
 	// Import the generated protobuf code
-	pb "github.com/linty5240/consignment/shippy-service-consignment/proto/consignment"
+	pb "github.com/lty5240/consignment/shippy-service-consignment/proto/consignment"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
