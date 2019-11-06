@@ -3,7 +3,7 @@
  * @Github: https://github.com/lty5240
  * @Date: 2019-11-06 16:30:07
  * @LastEditor: Linty
- * @LastEditTime: 2019-11-06 16:50:37
+ * @LastEditTime: 2019-11-06 17:51:18
  * @Description: -
  */
 // shippy-cli-consignment/main.go
@@ -62,4 +62,12 @@ func main() {
 		log.Fatalf("Could not greet: %v", err)
 	}
 	log.Printf("Created: %t", r.Created)
+
+	getAll, err := client.GetConsignments(context.Background(), &pb.GetRequest{})
+	if err != nil {
+		log.Fatalf("Could not list consignments: %v", err)
+	}
+	for _, v := range getAll.Consignments {
+		log.Println(v)
+	}
 }
