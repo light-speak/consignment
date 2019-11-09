@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN mkidr -p /app
+RUN mkdir -p /app
 WORKDIR /app
 
 ADD consignment.json /app/consignment.json
