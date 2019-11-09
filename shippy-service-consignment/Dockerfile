@@ -4,7 +4,6 @@ RUN apk --no-cache add git
 
 WORKDIR /app/shippy-service-consignment
 
-
 COPY . .
 
 RUN GOPROXY="https://goproxy.cn" GO111MODULE=on go mod download
