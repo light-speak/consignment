@@ -10,20 +10,18 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"io/ioutil"
 	"log"
 	"os"
-
-	"context"
 
 	pb "github.com/lty5240/consignment/shippy-service-consignment/proto/consignment"
 	"github.com/micro/go-micro"
 )
 
 const (
-	address         = "localhost:50051"
-	defaultFilename = "consignment.json"
+	defaultFilename = "shippy-cli-consignment/consignment.json"
 )
 
 func parseFile(file string) (*pb.Consignment, error) {
@@ -65,6 +63,8 @@ func main() {
 		log.Fatalf("Could not list consignments: %v", err)
 	}
 	for _, v := range getAll.Consignments {
-		log.Println(v)
+		for _, a := range v.Containers {
+			println(a.Origin)
+		}
 	}
 }

@@ -4,15 +4,15 @@
 package consignment
 
 import (
-	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
-	math "math"
+	"fmt"
+	"github.com/golang/protobuf/proto"
+	"math"
 )
 
 import (
-	client "github.com/micro/go-micro/client"
-	server "github.com/micro/go-micro/server"
-	context "golang.org/x/net/context"
+	"github.com/micro/go-micro/client"
+	"github.com/micro/go-micro/server"
+	"golang.org/x/net/context"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
