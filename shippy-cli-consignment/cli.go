@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	defaultFilename = "shippy-cli-consignment/consignment.json"
+	defaultFilename = "consignment.json"
 )
 
 func parseFile(file string) (*pb.Consignment, error) {

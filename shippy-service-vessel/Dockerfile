@@ -1,5 +1,7 @@
 FROM golang:alpine as builder
+LABEL stage=builder
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN apk --no-cache add git
 
 WORKDIR /app/shippy-service-vessel
@@ -16,5 +18,6 @@ RUN apk --no-cache add ca-certificates
 RUN mkdir /app
 WORKDIR /app
 COPY --from=builder /app/shippy-service-vessel .
+
 
 CMD ["./shippy-service-vessel"]

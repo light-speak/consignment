@@ -17,6 +17,7 @@ func (s *handler) CreateConsignment(ctx context.Context, req *consignment.Consig
 		MaxWeight: req.Weight,
 		Capacity:  int32(len(req.Containers)),
 	})
+
 	log.Printf("Found vessel : %s \n", vesselResponse.Vessel.Name)
 	if err != nil {
 		return err

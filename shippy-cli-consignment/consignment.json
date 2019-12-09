@@ -1,6 +1,6 @@
 {
   "description": "This is a test consignment",
-  "weight": 55000,
+  "weight": 290000,
   "containers": [
     { "customer_id": "第一条", "user_id": "用户1", "origin": "第一条数据的Origin" },
     { "customer_id": "第二条", "user_id": "用户1", "origin": "第二条数据的Origin" },

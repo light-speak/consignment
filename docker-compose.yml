@@ -4,6 +4,7 @@ services:
   shippy-cli-consignment:
     build:
       ./shippy-cli-consignment
+
   shippy-service-consignment:
     build:
       ./shippy-service-consignment
@@ -11,7 +12,8 @@ services:
       - 50051:50051
     environment:
       MICRO_ADDRESS: ":50051"
-      DB_HOST: "mongodb://root:LTYlty0123@172.18.0.1:27017"
+      DB_HOST: "mongodb://admin:LTYlty0123@datastore:27017"
+
   shippy-service-vessel:
     build:
       ./shippy-service-vessel
@@ -19,3 +21,21 @@ services:
       - 50052:50051
     environment:
       MICRO_ADDRESS: ":50051"
+      DB_HOST: "mongodb://admin:LTYlty0123@datastore:27017"
+
+  user-service:
+    build: ./shippy-service-user
+    ports:
+      - 50053:50051
+    environment:
+      MICRO_ADDRESS: ":50051"
+
+  datastore:
+    image: mongo
+    ports:
+      - 27017:27017
+
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
