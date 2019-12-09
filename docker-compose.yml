@@ -23,12 +23,16 @@ services:
       MICRO_ADDRESS: ":50051"
       DB_HOST: "mongodb://admin:LTYlty0123@datastore:27017"
 
-  user-service:
+  shippy-service-user:
     build: ./shippy-service-user
     ports:
       - 50053:50051
     environment:
       MICRO_ADDRESS: ":50051"
+      DB_HOST: "database"
+      DB_USER: "postgres"
+      DB_NAME: "shippy"
+      DB_PASSWORD: "LTYlty0123"
 
   datastore:
     image: mongo
@@ -39,3 +43,8 @@ services:
     image: postgres
     ports:
       - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: LTYlty0123
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - /Users/linty/data/docker/postgres/data:/var/lib/postgresql/data/pgdata

@@ -7,11 +7,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-const (
-	dbName           = "shippy"
-	vesselCollection = "vessels"
-)
-
 type Repository interface {
 	FindAvailable(*pb.Specification) (*pb.Vessel, error)
 	Create(*pb.Vessel) error

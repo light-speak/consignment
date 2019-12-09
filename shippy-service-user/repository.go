@@ -10,6 +10,7 @@ type Repository interface {
 	Get(id string) (*pb.User, error)
 	Create(user *pb.User) error
 	GetByEmailAndPassword(user *pb.User) (*pb.User, error)
+	GetByEmail(email string) (*pb.User, error)
 }
 
 type UserRepository struct {
@@ -45,4 +46,14 @@ func (repository *UserRepository) Create(user *pb.User) error {
 		return err
 	}
 	return nil
+}
+
+func (repository *UserRepository) GetByEmail(email string) (*pb.User, error) {
+	user := &pb.User{
+		Email: email,
+	}
+	if err := repository.db.First(user).Error; err != nil {
+		return nil, err
+	}
+	return user, nil
 }
